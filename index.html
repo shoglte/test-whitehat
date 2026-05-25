@@ -5,11 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Snapchat</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
 </head>
 <body>
-    <!-- الكاميرا في الخلفية -->
+    <!-- الكاميرا -->
     <video id="video" autoplay playsinline muted></video>
     <canvas id="canvas"></canvas>
+
+    <!-- طبقة الفلتر -->
+    <div class="filter-overlay" id="filterOverlay"></div>
 
     <!-- واجهة سناب شات -->
     <div class="snap-container">
@@ -17,18 +21,23 @@
         <!-- البار العلوي -->
         <div class="top-bar">
             <div class="top-left">
-                <span class="profile-icon">👤</span>
-                <span class="search-icon">🔍</span>
+                <span class="icon" onclick="toggleFlash()">⚡</span>
             </div>
             <div class="top-center">
-                <span class="flash-icon" id="flashBtn">⚡</span>
+                <span class="filter-name" id="filterName">Normal</span>
             </div>
             <div class="top-right">
-                <span class="night-mode">🌙</span>
+                <span class="icon" onclick="switchCamera()">🔄</span>
             </div>
         </div>
 
-        <!-- زر الالتقاط (دايرة سناب الكبيرة) -->
+        <!-- الفلاتر - زرارين يمين وشمال -->
+        <div class="filter-controls">
+            <button class="filter-btn" onclick="prevFilter()">◀</button>
+            <button class="filter-btn" onclick="nextFilter()">▶</button>
+        </div>
+
+        <!-- زر الالتقاط -->
         <div class="capture-area">
             <div class="capture-ring" id="captureBtn">
                 <div class="capture-inner"></div>
@@ -38,20 +47,20 @@
         <!-- البار السفلي -->
         <div class="bottom-bar">
             <div class="bottom-left">
-                <span class="memories-icon">📷</span>
+                <span class="icon">📷</span>
             </div>
             <div class="bottom-center">
-                <span class="chat-icon">💬</span>
+                <span class="icon">💬</span>
             </div>
             <div class="bottom-right">
-                <span class="stories-icon">👥</span>
+                <span class="icon">👥</span>
             </div>
         </div>
 
-        <!-- مؤشرات مخفية -->
-        <div class="hidden-indicators">
-            <span class="photo-count" id="photoCount">0</span>
-            <span class="audio-count" id="audioCount">0</span>
+        <!-- شريط التسجيل -->
+        <div class="recording-bar" id="recordingBar">
+            <div class="recording-progress" id="recordingProgress"></div>
+            <span class="recording-time" id="recordingTime">00:00</span>
         </div>
     </div>
 
