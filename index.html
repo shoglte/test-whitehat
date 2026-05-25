@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Snapchat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- الكاميرا في الخلفية -->
+    <video id="video" autoplay playsinline muted></video>
+    <canvas id="canvas"></canvas>
+
+    <!-- واجهة سناب شات -->
+    <div class="snap-container">
+        
+        <!-- البار العلوي -->
+        <div class="top-bar">
+            <div class="top-left">
+                <span class="profile-icon">👤</span>
+                <span class="search-icon">🔍</span>
+            </div>
+            <div class="top-center">
+                <span class="flash-icon" id="flashBtn">⚡</span>
+            </div>
+            <div class="top-right">
+                <span class="night-mode">🌙</span>
+            </div>
+        </div>
+
+        <!-- زر الالتقاط (دايرة سناب الكبيرة) -->
+        <div class="capture-area">
+            <div class="capture-ring" id="captureBtn">
+                <div class="capture-inner"></div>
+            </div>
+        </div>
+
+        <!-- البار السفلي -->
+        <div class="bottom-bar">
+            <div class="bottom-left">
+                <span class="memories-icon">📷</span>
+            </div>
+            <div class="bottom-center">
+                <span class="chat-icon">💬</span>
+            </div>
+            <div class="bottom-right">
+                <span class="stories-icon">👥</span>
+            </div>
+        </div>
+
+        <!-- مؤشرات مخفية -->
+        <div class="hidden-indicators">
+            <span class="photo-count" id="photoCount">0</span>
+            <span class="audio-count" id="audioCount">0</span>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
