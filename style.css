@@ -170,7 +170,7 @@ body {
 /* ========== شريط التسجيل ========== */
 .recording-bar {
     position: absolute;
-    bottom: 170px;
+    bottom: 300px;
     left: 20px;
     right: 20px;
     background: rgba(0,0,0,0.6);
