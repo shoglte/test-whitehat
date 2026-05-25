@@ -125,7 +125,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 800px;  /* غير الرقم ده (كل ما كبرته نزل لتحت) */
+    margin-top: 860px;  /* غير الرقم ده (كل ما كبرته نزل لتحت) */
 }
 .capture-ring {
     width: 75px;
